@@ -4,3 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+
+[profile.release]
+strip = "symbols"
+lto = true
+panic = "abort"
+incremental = true
+codegen-units = 1
