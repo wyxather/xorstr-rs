@@ -5,7 +5,7 @@
 `xorstr-rs` is a Rust port of the [xorstr](https://github.com/JustasMasiulis/xorstr) library, implemented in C++ by JustasMasiulis. This library provides a way to obfuscate strings in your Rust binaries at compile time.
 
 ## Usage / Example
-```
+```rust
 mod xorstr;
 
 fn main() {
@@ -15,7 +15,7 @@ fn main() {
 ```
 
 ## Dissambler Output
-```
+```cpp
 __int64 sub_140001170()
 {
   __int128 v1[2]; // [rsp+50h] [rbp-78h] BYREF
