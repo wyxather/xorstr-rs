@@ -110,6 +110,18 @@ impl<const SIZE: usize> XorStr<SIZE> {
     pub const fn as_str(self: &Self) -> Result<&str, Utf8Error> {
         from_utf8(self.as_slice::<u8>())
     }
+
+    pub fn print(self: &mut Self) {
+        print!("\n[xorstr]\nbytes=");
+        for i in &self.value {
+            print!("{}({:?}), ", i, i as *const u64);
+        }
+        print!("\naddress={:?}\nvalue=", self.value.as_ptr());
+        for byte in self.as_slice::<u8>() {
+            print!("{}", *byte as char);
+        }
+        println!();
+    }
 }
 
 impl<const SIZE: usize> Drop for XorStr<SIZE> {
